@@ -7,15 +7,15 @@ public class Calculator {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		
-		//Ввод пользователем математического выражения
+		//РІРІРѕРґ РјР°С‚РµРјР°С‚РёС‡РµСЃРєРѕРіРѕ РІС‹СЂР°Р¶РµРЅРёСЏ
 		String customerString;
 		System.out.print("Enter math:");
 		customerString = scan.nextLine();
 		
-		//Преобразовуем строку в массив символов
+		//РїСЂРµРѕР±СЂР°Р·РѕРІСѓРµРј РІ РјР°СЃСЃРёРІ СЃРёРјРІРѕР»РѕРІ
 		char[] customerStringChar = customerString.toCharArray();
 		
-		//Ищем количество математических операций
+		//РѕРїСЂРµРґРµР»СЏРµРј РєРѕР»РёС‡РµСЃС‚РІРѕ РјР°С‚РµРјР°С‚РёС‡РµСЃРєРёС… РѕРїРµСЂР°С†РёР№
 		int countOfMathOperation = 0;
 		for(int i=0; i<customerStringChar.length; i++){
 			if(customerStringChar[i] == '+'){
@@ -32,7 +32,7 @@ public class Calculator {
 			}
 		}
 		
-		//Отделяем массив чисел и массив математических действий
+		//Р Р°Р·РґРµР»СЏРµРј РІРІРµРґРµРЅРЅСѓСЋ СЃС‚СЂРѕРєСѓ РЅР° РјР°СЃСЃРёРІС‹ С‡РёСЃРµР» Рё Р·РЅР°РєРѕРІ
 		String[] numbersTemp = new String[countOfMathOperation+1];
 		char[] operators = new char[countOfMathOperation];
 		int[] operatorsIndex = new int[countOfMathOperation];
@@ -71,13 +71,13 @@ public class Calculator {
 		}
 		numbersTemp[countOfMathOperation] = customerString.substring(beginIndex);
 		
-		//Создаем числовой массив чисел
+		//СЃРѕР·РґР°РµРј С‡РёСЃР»РѕРІРѕР№ РјР°СЃРёРёРІ С‡РёСЃРµР»
 		double[] numbers = new double[countOfMathOperation+1];
 		for(int i=0; i<=countOfMathOperation; i++){
 			numbers[i] = Double.parseDouble(numbersTemp[i]);
 		}
 		
-		//Вычисляем результат без приоритета операций
+		//Р РµС€Р°РµРј РёСЃС…РѕРґРЅРѕРµ РІС‹СЂР°Р¶РµРЅРёРµ Р±РµР· РїСЂРёРѕСЂРёС‚РµС‚Р° Р·РЅР°РєРѕРІ
 		double result = numbers[0];
 		for(int i=0; i<operators.length; i++){
 			if(operators[i] == '+'){
