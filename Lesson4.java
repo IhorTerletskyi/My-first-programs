@@ -48,8 +48,8 @@ public class Lesson4 {
 		
 		//Задание 3. Заполнить массив числами от 100 до 0.
 		byte[] array100 = new byte[101];
-		for(byte i=100; i>=0; i--){
-			array100[i] = i;
+		for(byte counter=100; counter>=0; counter--){
+			array100[counter] = counter;
 		}
 		
 		/*Задание 4. Дано массив из 10 целых чисел. 
@@ -57,8 +57,8 @@ public class Lesson4 {
 		 * Я использую массив array1020 из 1го задания (он из 11 элементов)
 		 */
 		int summArray = 0;
-		for(int i=1; i<array1020.length-1; i++){
-			summArray = summArray + array1020[i];
+		for(int counter=1; counter<array1020.length-1;counter++){
+			summArray = summArray + array1020[counter];
 		}
 		System.out.println(summArray);
 		
@@ -70,12 +70,12 @@ public class Lesson4 {
 		byte[] arrayTask67 = {1,3,7,1,5,77,0,7,7,4,2};
 		byte minArray = arrayTask67[0];
 		byte maxArray = arrayTask67[0];
-		for(byte i=1; i<11; i++){
-			if(arrayTask67[i] < minArray){
-			    minArray = arrayTask67[i];
+		for(byte counter=1; counter<11; counter++){
+			if(arrayTask67[counter] < minArray){
+			    minArray = arrayTask67[counter];
 			   }
-			if(arrayTask67[i]>maxArray){
-				maxArray = arrayTask67[i];
+			if(arrayTask67[counter]>maxArray){
+				maxArray = arrayTask67[counter];
 			   }
 		}
 		System.out.println("min=" + minArray);
@@ -104,10 +104,10 @@ public class Lesson4 {
 		 * Используем массив arrayTask67 из задания 6 и 7.
 		 */
 		byte temp;
-		for(byte i=0; i<arrayTask67.length/2; i++){
-			temp = arrayTask67[i];
-			arrayTask67[i] = arrayTask67[(arrayTask67.length - 1) - i];
-			arrayTask67[(arrayTask67.length - 1) - i] = temp;
+		for(byte counter=0; counter<arrayTask67.length/2; counter++){
+			temp = arrayTask67[counter];
+			arrayTask67[counter] = arrayTask67[(arrayTask67.length - 1) - counter];
+			arrayTask67[(arrayTask67.length - 1) - counter] = temp;
 		}
 		System.out.println(Arrays.toString(arrayTask67));
 		
@@ -121,9 +121,9 @@ public class Lesson4 {
 		int[] newArray = new int[arrayLength];
 		
 		newArray[arrayLength/2] = 0;
-		for(int i=0;i<arrayLength/2; i++){
-			newArray[arrayLength - 1 - i] = arrayLength/2 - i;
-			newArray[i] = arrayLength/2 - i;
+		for(int counter=0;counter<arrayLength/2; counter++){
+			newArray[arrayLength - 1 - counter] = arrayLength/2 - counter;
+			newArray[counter] = arrayLength/2 - counter;
 		}
 		System.out.println(Arrays.toString(newArray));
 	}
