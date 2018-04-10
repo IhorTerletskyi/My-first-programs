@@ -4,21 +4,21 @@ public class Xoxo {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
-        char[] turnSequence = {'X','0','X','0','X','0','X','0','X'}; //массив поочередности хода
-        byte[] turnSequenceValue = {10,3,10,3,10,3,10,3,10}; //массив поочередности хода в числовом эквиваленте
-        char[][] turnMade = {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}}; //массив сделанных ходов
-        byte[][] turnMadeValue = {{0,0,0},{0,0,0},{0,0,0}}; //массив сделанных ходов в числовом эквиваленте
-        byte[] controlSumm = {0,0,0,0,0,0,0,0}; //массив контрольных сумм
+        char[] turnSequence = {'X','0','X','0','X','0','X','0','X'}; //РјР°СЃСЃРёРІ РїРѕРѕС‡РµСЂРµРґРЅРѕСЃС‚Рё С…РѕРґР°
+        byte[] turnSequenceValue = {10,3,10,3,10,3,10,3,10}; //РјР°СЃСЃРёРІ РїРѕРѕС‡РµСЂРµРґРЅРѕСЃС‚Рё С…РѕРґР° РІ С‡РёСЃР»РѕРІРѕРј СЌРєРІРёРІР°Р»РµРЅС‚Рµ
+        char[][] turnMade = {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}}; //РјР°СЃСЃРёРІ СЃРґРµР»Р°РЅРЅС‹С… С…РѕРґРѕРІ
+        byte[][] turnMadeValue = {{0,0,0},{0,0,0},{0,0,0}}; //РјР°СЃСЃРёРІ СЃРґРµР»Р°РЅРЅС‹С… С…РѕРґРѕРІ РІ С‡РёСЃР»РѕРІРѕРј СЌРєРІРёРІР°Р»РµРЅС‚Рµ
+        byte[] controlSumm = {0,0,0,0,0,0,0,0}; //РјР°СЃСЃРёРІ РєРѕРЅС‚СЂРѕР»СЊРЅС‹С… СЃСѓРјРј
         byte gorizontalValue;
         byte verticalValue;
-        boolean gameContinue = true; //необходимость продолжения игры
-        byte turn = -1; //номер текущего хода
+        boolean gameContinue = true; //РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚СЊ РїСЂРѕРґРѕР»Р¶РµРЅРёСЏ РёРіСЂС‹
+        byte turn = -1; //РЅРѕРјРµСЂ С‚РµРєСѓС‰РµРіРѕ С…РѕРґР°
         
-        //запускаем игру
+        //Р·Р°РїСѓСЃРєР°РµРј РёРіСЂСѓ
         while (gameContinue){
         	turn++;
         	
-        	//выводит на экран в красивой форме игровое поле
+        	//РІС‹РІРѕРґРёРј РЅР° СЌРєСЂР°РЅ РІ РєСЂР°СЃРёРІРѕР№ С„РѕСЂРјРµ РёРіСЂРѕРІРѕРµ РїРѕР»Рµ
         	System.out.flush();
         	System.out.println("    0   1   2");
         	System.out.print(" 0  " + turnMade[0][0]);
@@ -34,7 +34,7 @@ public class Xoxo {
         	System.out.println(" | " + turnMade[2][2]);
         	System.out.println();
         	
-        	//Вводим координаты клеточки, куда ставим крестик или нолик
+        	//Р’РІРѕРґРёРј РєРѕРѕСЂРґРёРЅР°С‚С‹ РєР»РµС‚РѕС‡РєРё, РєСѓРґР° СЃС‚Р°РІРёРј РєСЂРµСЃС‚РёРє РёР»Рё РЅРѕР»РёРє
         	System.out.println("Player " + turnSequence[turn] + " turn!");
         	System.out.print("Enter gorizontal coordinate:");
         	gorizontalValue = scan.nextByte();
@@ -44,7 +44,7 @@ public class Xoxo {
         	turnMade[gorizontalValue][verticalValue] = turnSequence[turn];
         	turnMadeValue[gorizontalValue][verticalValue] = turnSequenceValue[turn];
         	
-        	//Высчитываем контрольные суммы победы
+        	//Р’С‹СЃС‡РёС‚С‹РІР°РµРј РєРѕРЅС‚СЂРѕР»СЊРЅС‹Рµ СЃСѓРјРјС‹ РїРѕР±РµРґС‹
         	controlSumm[0] = (byte) (turnMadeValue[0][0] + turnMadeValue[0][1] + turnMadeValue[0][2]);
         	controlSumm[1] = (byte) (turnMadeValue[1][0] + turnMadeValue[1][1] + turnMadeValue[1][2]);
         	controlSumm[2] = (byte) (turnMadeValue[2][0] + turnMadeValue[2][1] + turnMadeValue[2][2]);
@@ -54,7 +54,7 @@ public class Xoxo {
         	controlSumm[6] = (byte) (turnMadeValue[0][0] + turnMadeValue[1][1] + turnMadeValue[2][2]);
         	controlSumm[7] = (byte) (turnMadeValue[2][0] + turnMadeValue[1][1] + turnMadeValue[0][2]);
         	
-        	//Проверяем наличие победы или ничьей
+        	//РџСЂРѕРІРµСЂСЏРµРј РЅР°Р»РёС‡РёРµ РїРѕР±РµРґС‹ РёР»Рё РЅРёС‡СЊРµР№
         	for(int counter=0; counter<8; counter++){
         		switch(controlSumm[counter]) {
         		case 9:
