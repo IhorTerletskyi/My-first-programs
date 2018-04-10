@@ -17,87 +17,64 @@ public class Calculator {
 		
 		//определяем количество математических операций
 		int countOfMathOperation = 0;
-		for(int i=0; i<customerStringChar.length; i++){
-			if(customerStringChar[i] == '+'){
-				countOfMathOperation++;
-			}
-			if(customerStringChar[i] == '-'){
-				countOfMathOperation++;
-			}
-			if(customerStringChar[i] == '*'){
-				countOfMathOperation++;
-			}
-			if(customerStringChar[i] == '/'){
+		for(int counter=0; counter<customerStringChar.length; counter++){
+			switch (customerStringChar[counter]) {
+			case '+' :
+			case '-' :
+			case '*' :
+			case '/' :
 				countOfMathOperation++;
 			}
 		}
 		
-		//Разделяем введенную строку на массивы чисел и знаков
+		//Разделяем введенную строку на массив чисел 		
 		String[] numbersTemp = new String[countOfMathOperation+1];
-		char[] operators = new char[countOfMathOperation];
-		int[] operatorsIndex = new int[countOfMathOperation];
+		double[] numbers = new double[countOfMathOperation+1];		
 		int numberOfArrayElement = -1;
 		int beginIndex = 0;
 		
-		for(int i=0; i<customerStringChar.length; i++){
-			if(customerStringChar[i] == '+'){
-				numberOfArrayElement++;
-				operators[numberOfArrayElement] = '+';
-				operatorsIndex[numberOfArrayElement] = i;
-				numbersTemp[numberOfArrayElement] = customerString.substring(beginIndex, i);
-				beginIndex = i + 1;
-			}
-			if(customerStringChar[i] == '-'){
-				numberOfArrayElement++;
-				operators[numberOfArrayElement] = '-';
-				operatorsIndex[numberOfArrayElement] = i;
-				numbersTemp[numberOfArrayElement] = customerString.substring(beginIndex, i);
-				beginIndex = i + 1;
-			}
-			if(customerStringChar[i] == '*'){
-				numberOfArrayElement++;
-				operators[numberOfArrayElement] = '*';
-				operatorsIndex[numberOfArrayElement] = i;
-				numbersTemp[numberOfArrayElement] = customerString.substring(beginIndex, i);
-				beginIndex = i + 1;
-			}
-			if(customerStringChar[i] == '/'){
-				numberOfArrayElement++;
-				operators[numberOfArrayElement] = '/';
-				operatorsIndex[numberOfArrayElement] = i;
-				numbersTemp[numberOfArrayElement] = customerString.substring(beginIndex, i);
-				beginIndex = i + 1;
-			}
+		for(int counter=0; counter<customerStringChar.length; counter++){
+			switch (customerStringChar[counter]) {
+			case '+' :				
+			case '-' :				
+			case '*' :				
+			case '/' :
+				numberOfArrayElement++;				
+				numbersTemp[numberOfArrayElement] = customerString.substring(beginIndex, counter);
+				numbers[numberOfArrayElement] = Double.parseDouble(numbersTemp[numberOfArrayElement]);
+				beginIndex = counter + 1;
+				break;
+			}			
 		}
 		numbersTemp[countOfMathOperation] = customerString.substring(beginIndex);
-		
-		//создаем числовой масиив чисел
-		double[] numbers = new double[countOfMathOperation+1];
-		for(int i=0; i<=countOfMathOperation; i++){
-			numbers[i] = Double.parseDouble(numbersTemp[i]);
-		}
+		numbers[countOfMathOperation] = Double.parseDouble(numbersTemp[countOfMathOperation]);
 		
 		//Решаем исходное выражение без приоритета знаков
 		double result = numbers[0];
-		for(int i=0; i<operators.length; i++){
-			if(operators[i] == '+'){
-				result = result + numbers[i+1];
-			}
-			if(operators[i] == '-'){
-				result = result - numbers[i+1];
-			}
-			if(operators[i] == '*'){
-				result = result * numbers[i+1];
-			}
-			if(operators[i] == '/'){
-				result = result / numbers[i+1];
+		numberOfArrayElement = 0;
+		
+		for(int counter=0; counter<customerStringChar.length; counter++){
+			switch (customerStringChar[counter]) {
+			    case '+':
+			    	numberOfArrayElement++;
+				    result = result + numbers[numberOfArrayElement];
+				    break;
+			    case '-':
+			    	numberOfArrayElement++;
+				    result = result - numbers[numberOfArrayElement];
+				    break;
+			    case '*':
+			    	numberOfArrayElement++;
+				    result = result * numbers[numberOfArrayElement];
+				    break;
+			    case '/':
+			    	numberOfArrayElement++;
+				    result = result / numbers[numberOfArrayElement];
+				    break;
+			
 			}
 		}
 		
 		System.out.println("The result = " + result);
-
-
 	}
-	
-
 }
