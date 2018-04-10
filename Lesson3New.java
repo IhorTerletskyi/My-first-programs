@@ -41,8 +41,11 @@ public class Lesson3New {
 		Arrays.sort(halfArray1);
 		Arrays.sort(halfArray2);
 		
-		System.out.println(Arrays.toString(halfArray1));
-		System.out.println(Arrays.toString(halfArray2));
+		String halfArray1String = Arrays.toString(halfArray1);
+		String halfArray2String = Arrays.toString(halfArray2);
+		
+		System.out.println(halfArray1String);
+		System.out.println(halfArray2String);
 		
 		//меняем местами первый и последний элементы в исходном массиве
 		double temp = customerArray[arrayLength-1];
