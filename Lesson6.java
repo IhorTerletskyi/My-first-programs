@@ -6,8 +6,8 @@ import java.text.SimpleDateFormat;
 
 public class Lesson6 {
 	
-	/*Ââåñòè ñ êîíñîëè äàòó. Ñðàâíèòü åå ñ òåêóùåé äàòîé â ñèñòåìå.
-	 * Âûâåñòè îòëè÷àþùèåñÿ ÷àñòè (ãîä, ìåñÿö) íà ýêðàí.
+	/*Ð’Ð²ÐµÑÑ‚Ð¸ Ñ ÐºÐ¾Ð½ÑÐ¾Ð»Ð¸ Ð´Ð°Ñ‚Ñƒ. Ð¡Ñ€Ð°Ð²Ð½Ð¸Ñ‚ÑŒ ÐµÐµ Ñ Ñ‚ÐµÐºÑƒÑ‰ÐµÐ¹ Ð´Ð°Ñ‚Ð¾Ð¹ Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ðµ.
+	 * Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ Ð¾Ñ‚Ð»Ð¸Ñ‡Ð°ÑŽÑ‰Ð¸ÐµÑÑ Ñ‡Ð°ÑÑ‚Ð¸ (Ð³Ð¾Ð´, Ð¼ÐµÑÑÑ†) Ð½Ð° ÑÐºÑ€Ð°Ð½.
 	 */
 	static void dateEquals() {
 		Scanner scan = new Scanner(System.in);
@@ -49,7 +49,7 @@ public class Lesson6 {
 	
 	}
 	
-	//Íàïèñàòü ñâîé âàðèàíò ô-è Arrays.equalsäëÿ short[].
+	//ÐÐ°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ ÑÐ²Ð¾Ð¹ Ð²Ð°Ñ€Ð¸Ð°Ð½Ñ‚ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸ Arrays.equals Ð´Ð»Ñ short[].
 	static boolean isEqualsShort (short first[], short second[]) {
 		boolean yes = true;		
 		if(first.length != second.length) {
@@ -65,7 +65,7 @@ public class Lesson6 {
 		return yes;
 	}
 	
-	//Íàïèñàòü ñâîé âàðèàíò ô-è Arrays.toString() äëÿ int[].
+	//ÐÐ°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ ÑÐ²Ð¾Ð¹ Ð²Ð°Ñ€Ð¸Ð°Ð½Ñ‚ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸ Arrays.toString() Ð´Ð»Ñ int[].
 	static String intToString (int array[]) {
 		String intInString;
 		StringBuilder result = new StringBuilder();
@@ -78,7 +78,7 @@ public class Lesson6 {
 		return intInString;
 	}
 	
-	//Íàïèñàòü êîä, êîòîðûé ïîçâîëèò ìåíÿòü è ÷èòàòü çíà÷åíèÿ ïðîèçâîëüíûõ áèòîâ â ìàññèâå int-îâ.
+	//ÐÐ°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ ÐºÐ¾Ð´, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ð¿Ð¾Ð·Ð²Ð¾Ð»Ð¸Ñ‚ Ð¼ÐµÐ½ÑÑ‚ÑŒ Ð¸ Ñ‡Ð¸Ñ‚Ð°Ñ‚ÑŒ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð»ÑŒÐ½Ñ‹Ñ… Ð±Ð¸Ñ‚Ð¾Ð² Ð² Ð¼Ð°ÑÑÐ¸Ð²Ðµ int-Ð¾Ð².
 	static void bitChange(int array[]) {
 		Scanner scan = new Scanner(System.in);
 		System.out.printf("What array element you whant to change? Select from 0 to %d", (array.length-1));
@@ -107,8 +107,8 @@ public class Lesson6 {
 		
 	}
 	
-	/*Ââåñòè ñ êîíñîëè ÷èñëî â áèíàðíîì ôîðìàòå.
-	 * Ïåðåâåñòè åãî â int è âûâåñòè íà ýêðàí(“10” -> 2).
+	/*Ð’Ð²ÐµÑÑ‚Ð¸ Ñ ÐºÐ¾Ð½ÑÐ¾Ð»Ð¸ Ñ‡Ð¸ÑÐ»Ð¾ Ð² Ð±Ð¸Ð½Ð°Ñ€Ð½Ð¾Ð¼ Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ.
+	 * ÐŸÐµÑ€ÐµÐ²ÐµÑÑ‚Ð¸ ÐµÐ³Ð¾ Ð² int Ð¸ Ð²Ñ‹Ð²ÐµÑÑ‚Ð¸ Ð½Ð° ÑÐºÑ€Ð°Ð½(â€œ10â€ -> 2).
 	 */
 	static void binaryToInt() {
 		Scanner scan = new Scanner(System.in);
@@ -125,8 +125,8 @@ public class Lesson6 {
 		System.out.println();
 	}
 	
-	/*Ââåñòè ñ êîíñîëè öåëîå ÷èñëî. 
-	 * Ïîñ÷èòàòü êîëè÷åñòâî åäèíèö â åãî áèíàðíîì ïðåäñòàâëåíèè (“1011”–> 3).
+	/*Ð’Ð²ÐµÑÑ‚Ð¸ Ñ ÐºÐ¾Ð½ÑÐ¾Ð»Ð¸ Ñ†ÐµÐ»Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾. 
+	 * ÐŸÐ¾ÑÑ‡Ð¸Ñ‚Ð°Ñ‚ÑŒ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÐµÐ´Ð¸Ð½Ð¸Ñ† Ð² ÐµÐ³Ð¾ Ð±Ð¸Ð½Ð°Ñ€Ð½Ð¾Ð¼ Ð¿Ñ€ÐµÐ´ÑÑ‚Ð°Ð²Ð»ÐµÐ½Ð¸Ð¸ (â€œ1011â€â€“> 3).
 	 */
 	static void oneValue () {
 		Scanner scan = new Scanner(System.in);
@@ -145,7 +145,7 @@ public class Lesson6 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//dateEquals();
+		dateEquals();
 		
 		short first[] = new short[] {1, 2, 3, 4, 5};
 		short second[] = new short[] {1,1,3,4,5};
